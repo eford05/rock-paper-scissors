@@ -77,8 +77,21 @@ function playRound(humanChoice, computerChoice) {
 
   // Test results
   let winCondition = WIN_CONDITIONS[humanChoice];
-  console.log(`Win condition key: ${humanChoice} `);
-  console.log(`Win condition value: ${winCondition} `);
+
+  // Player wins
+  if (winCondition === computerChoice) {
+    return console.log(
+      `${
+        humanChoice[0].toUpperCase() + humanChoice.substring(1)
+      } beats ${computerChoice}! You win!`
+    );
+  } else {
+    return console.log(
+      `${
+        computerChoice[0].toUpperCase() + computerChoice.substring(1)
+      } beats ${humanChoice}! You lose!`
+    );
+  }
 }
 
 const HUMAN_SELECTION = getHumanChoice();
