@@ -54,3 +54,35 @@ function getHumanChoice() {
 
   return playerChoice;
 }
+
+// Write logic to play one round
+function playRound(humanChoice, computerChoice) {
+  console.log(`Player choice: ${humanChoice}`);
+  console.log(`Computer choice: ${computerChoice}`);
+  // Tie
+  if (humanChoice === computerChoice) {
+    return console.log(
+      `Tie! ${
+        humanChoice[0].toUpperCase() + humanChoice.substring(1)
+      } and ${computerChoice} is a stalemate!`
+    );
+  }
+
+  // Winning conditions for player
+  const WIN_CONDITIONS = {
+    rock: "scissors",
+    paper: "rock",
+    scissors: "paper",
+  };
+
+  // Test results
+  let winCondition = WIN_CONDITIONS[humanChoice];
+  console.log(`Win condition key: ${humanChoice} `);
+  console.log(`Win condition value: ${winCondition} `);
+}
+
+const HUMAN_SELECTION = getHumanChoice();
+const COMPUTER_SELECTION = getComputerChoice();
+
+// Test
+playRound(HUMAN_SELECTION, COMPUTER_SELECTION);
