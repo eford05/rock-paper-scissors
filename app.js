@@ -1,3 +1,7 @@
+// Declare the computer and human scores
+let computerScore = 0;
+let humanScore = 0;
+
 // Write the logic to get the computer choice
 function getComputerChoice() {
   // Randomly generate one: rock, paper, scissors
@@ -50,5 +54,3 @@ function getHumanChoice() {
 
   return playerChoice;
 }
-
-console.log(getHumanChoice());
